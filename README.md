@@ -1,7 +1,9 @@
 # RSA algorithm with python
 
 ---
-## Team head: Mohammadrafie Fatahinia
+## Team head: Mohammadrafie Fatahinia (40323643)
+## collaborator: Mahdi Asadian (40317753)
 
-## collaborators: Mahdi Asadian
+---
+
 
