@@ -1,5 +1,6 @@
 #in the name of GOD
 import random
+import math
 
 
 def generate_prime_number(length):
@@ -41,3 +42,16 @@ def is_prime(n):
             return False
 
     return True
+
+
+
+def find_coprime_e(phi_n):
+    
+    for candidate in [65537, 257, 17, 5, 3]:  #Fermat Numbers(standard for RSA)
+        if candidate < phi_n and math.gcd(candidate, phi_n) == 1:
+            return candidate
+    
+    while True:
+        candidate = random.randint(7, phi_n - 1)
+        if math.gcd(candidate, phi_n) == 1:
+            return candidate
