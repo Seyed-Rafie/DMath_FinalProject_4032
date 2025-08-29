@@ -11,7 +11,7 @@ def generate_prime_number(length):
 
 
 
-def is_prime(n):
+def is_prime(n): # with Miller Rabbin algorithm
 
     if n < 2:
         return False
