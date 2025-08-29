@@ -43,7 +43,23 @@ def is_prime(n):
 
     return True
 
+def generate_n(min_length, max_length):
 
+    length = random.randint(min_length, max_length)
+    global p
+    p = generate_prime_number(length)
+
+    length = random.randint(min_length, max_length)
+    global q
+    q = generate_prime_number(length)
+
+    n = p * q
+    return n,p,q
+
+def phi(p,q):
+    if p == 0 or q == 0:
+        return -1
+    return (p-1)*(q-1)
 
 def find_coprime_e(phi_n):
     
@@ -65,3 +81,11 @@ def inverse_euclidean_d(phi_n, e):
         return 0, 1
     a,b = inverse_euclidean_d(phi_n % e, e)
     return b - (phi_n//e) * a ,a
+
+def cryptography(message,e,n):
+    cipher = pow(message,e, n)
+    return cipher
+
+def decryption(cipher,d,n):
+    message = pow(cipher, d, n)
+    return message
