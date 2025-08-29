@@ -55,3 +55,13 @@ def find_coprime_e(phi_n):
         candidate = random.randint(7, phi_n - 1)
         if math.gcd(candidate, phi_n) == 1:
             return candidate
+
+
+
+def inverse_euclidean_d(phi_n, e):
+    if phi_n < e:
+        phi_n , e = e , phi_n
+    if e == 0:
+        return 0, 1
+    a,b = inverse_euclidean_d(phi_n % e, e)
+    return b - (phi_n//e) * a ,a
